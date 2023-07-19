@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="row mt-3">
+        <!-- <div class="border text-center">
+            <h2 class="mt-3 mb-3">BUDGET APP</h2>
+        </div> -->
+        <div class="col-lg-4 col-md-4 col-sm-12 border-end">
+            <!-- le formulaire du budget -->
+            <h3 style="margin-left: 10px;">BUDGET APP</h3>
+            <div class="budget-form mt-4" id="budgetform">
+                <form id="addform">
+                    <div class="form-group container">
+                        <label for="" 
+                        style="font-weight: 400;"
+                        class="text-secondary-emphasis"
+                        >Make A Budget</label>
+                        <input type="number" class="form-control border border-secondary-subtle" id="number">
+                        <button class="btn btn-outline-danger mt-4 w-100" type="submit">Add budget</button>
+                    </div>
+                </form>
+            </div>
+
+            <hr style="margin-top: 40px; margin-bottom: 30px;">
+
+            <!-- les formulaires de depenses -->
+            <div class="expenses-form" id="expenses-form">
+                <form id="expform">
+                    <div class="form-group container">
+                        <label for="" style="font-weight: 400;">Enter your expenses</label>
+                        <input type="text" class="form-control border border-secondary-subtle" id="expname">
+                    </div>
+
+                    <div class="form-group container">
+                        <label for="" style="font-weight: 400;">Enter your expenses amount</label>
+                        <input type="number" class="form-control border border-secondary-subtle" id="expnumber">
+                    </div>
+
+                    <!-- expense button -->
+                    <div class="container">
+                        <button class="btn btn-outline-success mt-4 w-100" type="submit">Add expense</button>
+                    </div>
+                </form>
+            </div>
+
+            <hr style="margin-top: 40px; margin-bottom: 30px;">
+
+            <!-- Reset button -->
+            <div class="container">
+                <button class="btn btn-danger w-100" onclick="resetBudget()">Reset</button>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-12 border-end">
+            <div class="budgetsection row text-center">
+                <!-- le budget actuel -->
+                <div class="budget col col-md col-sm">
+                    <p><strong>BUDGET</strong></p>
+                    <i class="fa-solid fa-sack-dollar"></i>
+                    <p class="expam mt-3">$ <span id="amountbudget">0</span></p>
+                </div> 
+                
+                <!-- la depense actuel -->
+                <div class="expenses col col-md col-sm">
+                    <p><strong>EXPENSES</strong></p>
+                    <i class="fa-solid fa-credit-card"></i>
+                    <p class="expam mt-3">$ <span id="amountexpense">0</span></p>
+                </div> 
+
+                <!-- le balance actuel -->
+                <div class="balance col col-md col-sm">
+                    <p><strong>BALANCE</strong></p>
+                    <i class="fa-solid fa-dollar"></i>
+                    <p class="expam mt-3">$ <span id="amountbalance">0</span></p>
+                </div> 
+            </div>
+
+            <hr>
+
+            <div class="row">
+                <p style="font-weight: 500;" class="col text-secondary">Title</p>
+                <p style="font-weight: 500;" class="col text-secondary">Prices</p>
+                <p class="col"></p>
+            </div>
+            <div class="expVal col col-md" id="expValue">
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <!-- History button -->
+            <div class="container">
+                <button class="btn btn-outline-secondary w-100" id="btn" onclick="historyBudget()">History</button>
+            </div>
+            <div class="history col col-md" id="history">
+                <div id="his"></div>
+            </div>
+            <div class="container" id="close"></div>
+            <div id="container"></div>
+            <div>
+                <canvas id="myChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="app.js"></script>
+    <script src="d3.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://use.fontawesome.com/your-embed-code.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
